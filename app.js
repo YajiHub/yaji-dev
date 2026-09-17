@@ -298,4 +298,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 8. Interactive Game Showcase Iframe Reload Handler
+  const reloadGameBtn = document.getElementById('reloadGameBtn');
+  const rpsGameIframe = document.getElementById('rpsGameIframe');
+  if (reloadGameBtn && rpsGameIframe) {
+    reloadGameBtn.addEventListener('click', () => {
+      const currentSrc = rpsGameIframe.src;
+      rpsGameIframe.src = 'about:blank';
+      setTimeout(() => {
+        rpsGameIframe.src = currentSrc;
+      }, 50);
+    });
+  }
 });
+
